@@ -1,0 +1,53 @@
+--Установить и настроить PyCharm и PostgreSQL.
+
+--В PostgreSQL создать базу данных, которая будет использоваться для проекта.
+
+--Скачать проект через Git Bash:
+
+cd PycharmProjects
+git clone https://github.com/Klevchik1/Django-cinema
+
+
+
+--Перейти в settings.py и найти раздел DATABASES. Вставить раздел со своими данными:
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'название_базы_данных',
+        'USER': 'имя_пользователя',
+        'PASSWORD': 'пароль_пользователя',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+
+
+--Ввести команды для создания таблиц в базе данных:
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+
+--Для заполнения базы данных начальными данными используем кастомную команду:
+
+python manage.py populate_db
+
+
+
+--Запускаем сервер:
+
+python manage.py runserver
+
+
+
+--Переходим по адресу http://127.0.0.1:8000/
+
+
+--Данные Системного Администратора:
+
+Логин: admin@example.com
+Пароль: admin
